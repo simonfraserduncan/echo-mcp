@@ -1,8 +1,8 @@
 import express from 'express';
 import { randomUUID } from 'node:crypto';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
-import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp';
-import { isInitializeRequest } from '@modelcontextprotocol/sdk/types';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js';
 
 // Set up the port to listen on (default 8000 or from env variable)
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 8000;
@@ -22,27 +22,27 @@ const createMcpServer = () => {
     },
   }, async ({ message }) => {
     console.log(`Echo tool called with message: ${message}`);
-    // Return value in the correct MCP response format
+    // Return content in the correct MCP response format
     return {
-      value: message
+      content: [{ type: 'text', text: message }]
     };
   });
 
   // Ping tool
   server.tool('ping', 'Returns "pong" when called', {}, async () => {
     console.log('Ping tool called');
-    // Return value in the correct MCP response format
+    // Return content in the correct MCP response format
     return {
-      value: "pong"
+      content: [{ type: 'text', text: 'pong' }]
     };
   });
 
   // Version tool
   server.tool('version', 'Returns the server version', {}, async () => {
     console.log('Version tool called');
-    // Return value in the correct MCP response format
+    // Return content in the correct MCP response format
     return {
-      value: "0.0.1"
+      content: [{ type: 'text', text: '0.0.1' }]
     };
   });
 
