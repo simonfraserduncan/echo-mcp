@@ -21,17 +21,38 @@ const createMcpServer = () => {
       description: 'The message to echo back',
     },
   }, async ({ message }) => {
-    return message;
+    return {
+      content: [
+        {
+          type: 'text',
+          text: message,
+        },
+      ],
+    };
   });
 
   // Ping tool
   server.tool('ping', 'Returns "pong" when called', {}, async () => {
-    return 'pong';
+    return {
+      content: [
+        {
+          type: 'text',
+          text: 'pong',
+        },
+      ],
+    };
   });
 
   // Version tool
   server.tool('version', 'Returns the server version', {}, async () => {
-    return '0.0.1';
+    return {
+      content: [
+        {
+          type: 'text',
+          text: '0.0.1',
+        },
+      ],
+    };
   });
 
   return server;
