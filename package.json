@@ -1,0 +1,31 @@
+{
+  "name": "echo-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonfraserduncan/echo-mcp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonfraserduncan/echo-mcp/issues"
+  },
+  "homepage": "https://github.com/simonfraserduncan/echo-mcp#readme",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
+    "@smithery/sdk": "^1.3.3",
+    "@types/express": "^5.0.1",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1"
+  }
+}
