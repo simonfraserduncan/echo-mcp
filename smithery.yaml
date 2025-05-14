@@ -1,3 +1,6 @@
 version: 1
-startCommand: ["npm", "start"]
+startCommand:
+  type: http
+  command: "npm"
+  args: ["start"]
 port: 8000 
